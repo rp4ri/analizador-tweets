@@ -4,7 +4,7 @@
 
 - **Contact:** rodrigo.parisusao25201@gmail.com
 
-Proyecto con script básicos para analizar tweets en general.
+Proyecto con scripts básicos para analizar tweets en general.
 
 ## Licence
 
