@@ -1,0 +1,152 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>Resumen de los resultados obtenidos</title>
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="estilos/styles.css">
+        </head>
+        <body>
+        <div class="section padding-bottom-big over-hide">
+        <div class="container">
+        <div class="row">
+        <div class="col-12 text-center mt-3 mb-2">
+        <div class="blog-post-text">
+            <h2>Tablas obtenidas</h2>
+            <p class="mb-3 mt-3">A continuación se describirá las tablas generadas.</p>
+
+            <h3>Tabla de tweets en espacio 3D</h3>
+            <p class="mb-3 mt-3">Obtenida al aplicar el modelo BERT preentrenado para español a los tweets, y reducirlos a 3 dimensiones.</p>
+            <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>texto-original</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Pobres #MasistasIgnorantes piensan que por andar con #TioTongo, su nuevo #MasiMula #MasiLlunku, van a ser bienvenidos en #SantaCruzBo 🤡🤡🤡\nIgual le vamos a hacer #RevocaTongo a Juanito (salvate y #RenunciaYa) https://t.co/inmi6knY6h</td>
+      <td>-0.919580</td>
+      <td>-0.824795</td>
+      <td>-0.407660</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>@DraInterleucina @LuisFerCamachoV @ElgobernadorLfc Hay que darle #RevocaTongo al tipejo</td>
+      <td>-1.109628</td>
+      <td>1.176379</td>
+      <td>0.033446</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>El tongo siempre fue maleante. Mandó a desvalijar la casa de su padre en cuánto se esteró de su fallecimiento. Vaciaron 2 cajas fuertes con mucho dinero, lingotes de Oro, joyas y mucha documentación de propiedades de don Max F. Todo a ocultas de su hermano Roberto. #RevocaTongo https://t.co/zVBe5Gfx1E</td>
+      <td>6.045797</td>
+      <td>-0.501563</td>
+      <td>0.545565</td>
+    </tr>
+  </tbody>
+</table>
+
+            <p class="mb-3 mt-3">Al hacer clustering se generó la grafica 3_elbow-method.png con el propósito de aplicar el método elbow</p>
+            <img src='figures/3_elbow-method.png' width="700">
+
+            <p class="mb-3 mt-3">La gráfica 3_count_elements_in_clusters.png muestra la cantidad de elementos en cada cluster al aplicar el algoritmo de clustering a nuestra tabla.</p>
+            <img src='figures/3_count_elements_in_clusters.png' width="700">
+
+            <p class="mb-3 mt-3">El archivo 3d-scatter-plot.html es una visualización interactiva de los puntos en el espacio tridimensional.</p>
+            <img src='figures/3d-scatter-plot.png' width="700">
+
+            <h3>Tabla de análisis de sentimientos</h3>
+            <p class="mb-3 mt-3">Obtenida al aplicar un análisis de sentimientos a los tweets.</p>
+            <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>texto-original</th>
+      <th>compound_nltk</th>
+      <th>polarity_tb</th>
+      <th>subjectivity_tb</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Pobres #MasistasIgnorantes piensan que por andar con #TioTongo, su nuevo #MasiMula #MasiLlunku, van a ser bienvenidos en #SantaCruzBo 🤡🤡🤡\nIgual le vamos a hacer #RevocaTongo a Juanito (salvate y #RenunciaYa) https://t.co/inmi6knY6h</td>
+      <td>-0.0258</td>
+      <td>0.178788</td>
+      <td>0.651515</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>@DraInterleucina @LuisFerCamachoV @ElgobernadorLfc Hay que darle #RevocaTongo al tipejo</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>El tongo siempre fue maleante. Mandó a desvalijar la casa de su padre en cuánto se esteró de su fallecimiento. Vaciaron 2 cajas fuertes con mucho dinero, lingotes de Oro, joyas y mucha documentación de propiedades de don Max F. Todo a ocultas de su hermano Roberto. #RevocaTongo https://t.co/zVBe5Gfx1E</td>
+      <td>-0.8625</td>
+      <td>-0.583333</td>
+      <td>0.666667</td>
+    </tr>
+  </tbody>
+</table>
+            <p class="mb-3 mt-3">La siguiente tabla es una descripción de la tabla obtenida.</p>
+            <div style="margin: auto; display: block; width: 50%;"><table border="1" class="dataframe" style="margin : auto;">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>compound_nltk</th>
+      <th>polarity_tb</th>
+      <th>subjectivity_tb</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>36.000000</td>
+      <td>36.000000</td>
+      <td>36.00000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>-0.129739</td>
+      <td>-0.010959</td>
+      <td>0.24134</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-0.931300</td>
+      <td>-0.583333</td>
+      <td>0.00000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.806800</td>
+      <td>0.500000</td>
+      <td>1.00000</td>
+    </tr>
+  </tbody>
+</table></div>
+
+            <p class="mb-3 mt-3">Al analizar el texto, se generó una nube de palabras wordcloud.png.</p>
+            <img src='figures/wordcloud.png' width="700">
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </body>
+    </html>
+    

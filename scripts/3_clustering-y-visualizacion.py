@@ -51,12 +51,14 @@ def get_elbow_and_clustering(df, n_clusters=5):
     plt.savefig('reports/figures/3_elbow-method.png')
 
     model = KMeans(n_clusters = n_clusters, init = "k-means++", max_iter = 300, n_init = 10, random_state = 0)
+    y_clusters = model.fit_predict(X)
     model.fit(X)
 
     #sns.set_style("darkgrid", {"axes.facecolor": ".9"})
     #plt.style.use('dark_background')
+    # restart the plot
+    fig = plt.figure(figsize = (7,7))
     sns.countplot(y_clusters)
-
     plt.savefig('reports/figures/3_count_elements_in_clusters.png')
 
     Scene = dict(xaxis = dict(title  = '<-- x -->'),yaxis = dict(title  = '<-- y -->'),zaxis = dict(title  = '<-- z -->'))
@@ -72,11 +74,13 @@ def get_elbow_and_clustering(df, n_clusters=5):
                         # in text put first 50 characters of the tweet
                         text=df['texto-original'].str[:150],
                         marker=dict(color = labels, size= 10, line=dict(color= 'black',width = 10),opacity=0.8))
-    layout = go.Layout(margin=dict(l=0,r=0),scene = Scene,height = 1200,width = 1200, template="plotly_dark")
+    layout = go.Layout(margin=dict(l=0,r=0),scene = Scene,height = 1200,width = 1200, template="seaborn")
     data = [trace]
     fig = go.Figure(data = data, layout = layout)
 
     fig.write_html("reports/figures/3d-scatter-plot.html")
+    # export to png
+    fig.write_image("reports/figures/3d-scatter-plot.png")
 
     # export df to excel
     df.to_excel("data/2_processed/0_texto(sinrep)_puntos3d.xlsx")

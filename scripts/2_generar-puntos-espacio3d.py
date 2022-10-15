@@ -19,6 +19,9 @@ def get_raw():
     df = pd.read_excel('data/0_raw/0_raw.xlsx')
     return df
 def preproc_data_bert(df):
+    df = df['texto-original']
+    df = df.drop_duplicates()
+
     tokenized = df.apply((lambda x: torch.tensor([tokenizer.encode(x, add_special_tokens=True)])))
     last_hidden_states = tokenized.apply(lambda x: model(x)[0])
     average = last_hidden_states.apply(lambda x: torch.mean(x, dim=1))
@@ -28,7 +31,7 @@ def preproc_data_bert(df):
     # dimension (1, 768) to (768,)
     average = average.apply(lambda x: x[0])
 
-    average.to_json('../data/1_intermediate/1_intermediate-vectores.json', orient='records', lines=True)
+    average.to_json('data/1_intermediate/1_intermediate-vectores.json', orient='records', lines=True)
 def get_vectores():
     """read the intermediate file and return a dataframe with the data
     Returns:

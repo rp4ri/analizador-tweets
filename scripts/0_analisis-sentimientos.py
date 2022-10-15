@@ -24,7 +24,7 @@ def get_raw():
 # funciones para crear nuevas columnas
 def compound_nltk(text):
     try:
-        return sid.polarity_scores(text)['compound']
+        return SentimentIntensityAnalyzer().polarity_scores(text)['compound']
     except:
         return None
 

@@ -1,3 +1,5 @@
+# coding: cp1252
+
 # main, run all python scripts in folder scripts using for f in *.py; do python "$f"; done
 def main():
     import os

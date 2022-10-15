@@ -30,7 +30,7 @@ def preproc_data_nube(df):
         except:
             pass
     return df
-def get_nube(df):
+def get_nube(df, stop_words=stop_words):
     """Generate a wordcloud from the text of the dataframe
     Args:
         df(pd.DataFrame): a dataframe
@@ -52,7 +52,7 @@ def get_nube(df):
 def main():
     df = get_raw()
     df = preproc_data_nube(df)
-    wordcloud = get_nube(df)
+    wordcloud = get_nube(df, stop_words=stop_words)
     wordcloud.to_file('reports/figures/wordcloud.png')
 if __name__ == '__main__':
     main()
