@@ -39,8 +39,6 @@ Y un gráfico 3D interactivo generado usando plotly
 
 <img src="https://github.com/rp4ri/analizador-tweets/blob/3a08bcd449d3909aaf6a7fdbc28858a9f9350b1d/reports/figures/3d-scatter-plot.png" width="650" height="500"/>
 
-![alt text](https://github.com/rp4ri/analizador-tweets/blob/3a08bcd449d3909aaf6a7fdbc28858a9f9350b1d/reports/figures/3d-scatter-plot.png | width=100)
-
 ## Directories Distribution
 ```
 ├── LICENCE
