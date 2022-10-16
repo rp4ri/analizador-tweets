@@ -16,7 +16,7 @@ This project has not a license file
 
 Se generará un archivo con un resumen del análisis de los tweets html_report.html, para visualizar el reporte de ejemplo se puede usar este enlace:
 
-[https://rodrigopari.github.io/analizador-tweets/html_report.html]
+[Click para ver el reporte generado con los datos del ejemplo.](https://rp4ri.github.io/entradas/15-10-22.html)
 
 Se generán dos tablas en excel:
 
